@@ -13,6 +13,6 @@ class TicketMailer < ActionMailer::Base
   end
 
   def test_mailer
-mail(:to => “theodore.haile@gmail.com”, :subject => “New friend added”)
-end
+    mail(:to => "theodore.haile@gmail.com", :subject => "New friend added")
+  end
 end
