@@ -8,8 +8,8 @@ class IncomingMailsController < ApplicationController
     # Rails.logger.log Logger::INFO, message.body.decoded #print the decoded body to the logs
 
     @ticket = Ticket.new
-    ticket.name = params[:subject]
-    ticket.content = params[:plain]
+    @ticket.name = params[:subject]
+    @ticket.content = params[:plain]
 
     @ticket.save
 
