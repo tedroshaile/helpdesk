@@ -8,9 +8,9 @@ class IncomingMailsController < ApplicationController
     # Rails.logger.log Logger::INFO, message.body.decoded #print the decoded body to the logs
 
     @ticket = Ticket.new
-    @ticket.name = params[:headers][:subject]
+    @ticket.name = params[:headers][:Subject]
     @ticket.content = params[:plain]
-    @ticket.user = params[:from]
+    @ticket.user = params[:headers][:From]
     @ticket.save
 
     # Do some other stuff with the mail message
