@@ -4,12 +4,12 @@ class IncomingMailsController < ApplicationController
 
   def create
     message = Mail.new(params[:message])
-    Rails.logger.log Logger::INFO, message.subject #print the subject to the logs
-    Rails.logger.log Logger::INFO, message.body.decoded #print the decoded body to the logs
+    # Rails.logger.log Logger::INFO, message.subject #print the subject to the logs
+    # Rails.logger.log Logger::INFO, message.body.decoded #print the decoded body to the logs
 
     @ticket = Ticket.new
-    @ticket.name = message.subject
-    @ticket.content = message.body.decoded
+    ticket.name = params[:subject]
+    ticket.content = params[:plain]
 
     @ticket.save
 
