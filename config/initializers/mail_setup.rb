@@ -1,4 +1,3 @@
-mail_setup.rb
 ActionMailer::Base.smtp_settings = {
   :address => ‘smtp.sendgrid.net’,
   :port => ’587′,
