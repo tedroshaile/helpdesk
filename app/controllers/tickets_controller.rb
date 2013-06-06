@@ -1,6 +1,9 @@
 class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
+    # before_filter :find_ticket
+
+
   def index
     @tickets = Ticket.all
 
@@ -80,4 +83,9 @@ class TicketsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+# private
+#   def find_ticket
+#     @ticket = Ticket.find(params[:ticket_id])
+#   end
 end

@@ -1,8 +1,12 @@
 Helpdesk::Application.routes.draw do
   resources :tickets
 
+  resources :ticket_updates
+
   root :to => 'tickets#index'
   post '/incoming_mails' => 'incoming_mails#create'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
